@@ -13,7 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorTest", "CalculatorTest\CalculatorTest.csproj", "{EF40111E-5133-4E92-80D1-472548761F7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{73F3A4DE-2ED7-463F-AED2-FCC1545A67D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{73F3A4DE-2ED7-463F-AED2-FCC1545A67D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF0B14E6-9001-4ACA-9F7F-CDC33499E8F5}"
+	ProjectSection(SolutionItems) = preProject
+		About.html = About.html
+		Images\github_pic.webp = Images\github_pic.webp
+		Index.html = Index.html
+		Images\Logos\sj.png = Images\Logos\sj.png
+		Styles.css = Styles.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
