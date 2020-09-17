@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UtilityLibraries;
+using StringLibrary;
 
 namespace StringLibraryTest
 {
@@ -43,7 +43,7 @@ namespace StringLibraryTest
             string[] words = { string.Empty, null };
             foreach (var word in words)
             {
-                bool result = StringLibrary.StartsWithUpper(word);
+                bool result = StringLibrary.StringLibrary.StartsWithUpper(word);
                 Assert.IsFalse(result,
                     String.Format("Expected for '{0}': false; Actual: {1}",
                         word == null ? "<null>" : word, result));
