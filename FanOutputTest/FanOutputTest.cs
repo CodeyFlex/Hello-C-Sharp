@@ -39,7 +39,7 @@ namespace FanOutputTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Temp value is invalid (Less than 15, or more than 25.")]
+        [ExpectedException(typeof(ArgumentException), "Temp value is invalid (Is less than 15, or more than 25.")]
         public void setTempFailTest()
         {
             FanSys.setTemp(99);
@@ -53,10 +53,10 @@ namespace FanOutputTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Humidity value is invalid (Less than 30, or more than 80.")]
+        [ExpectedException(typeof(ArgumentException), "Humidity value is invalid (Is less than 30, or more than 80.")]
         public void setHumidtyFailTest()
         {
-            FanSys.setTemp(89);
+            FanSys.setHumidity(89);
         }
     }
 }

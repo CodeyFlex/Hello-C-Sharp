@@ -44,7 +44,7 @@ namespace FanSystem
             }
             else
             {
-                throw new System.ArgumentException("Temp value is invalid (Less than 15, or more than 25.");
+                throw new System.ArgumentException("Temp value is invalid (Is less than 15, or more than 25.");
             }
         }
         public int getHumidity()
@@ -59,7 +59,7 @@ namespace FanSystem
             }
             else
             {
-               throw new System.ArgumentException("Humidity value is invalid (Less than 30, or more than 80.");
+               throw new System.ArgumentException("Humidity value is invalid (Is less than 30, or more than 80.");
             }
         }
     }
