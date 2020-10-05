@@ -54,7 +54,7 @@ namespace FanOutputTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Humidity value is invalid (Is less than 30, or more than 80.")]
-        public void setHumidtyFailTest()
+        public void setHumidityFailTest()
         {
             FanSys.setHumidity(89);
         }
