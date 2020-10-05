@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Responsive Redesign</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="stylesRD.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="Index.html">New Design</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="Original.html">Old Design</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="Brand">
+                    <div>Peter Levinsky</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="portfolio-items-wrapper">
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Beginner_Programming.jpg)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            1st Semster: Programming
+                        </div>
+                        <a href="https://pele-easj.dk/2020e-swc1/SEMESTER.htm" class="links">Semester Plan (Weekplan)</a>
+                        <a href="https://pele-easj.dk/2020e-swc1/General-information.htm" class="links">Information</a>
+                        <a href="https://pele-easj.dk/2020e-swc1/GuidelinesAndObjectives.htm" class="links">Purpose</a>
+                        <div class="links">
+                            Intranet
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Tech.webp)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            3rd Semester: Tech
+                        </div>
+                        <a href="https://pele-easj.dk/2020e-tek/SEMESTER.htm" class="links">Semester Plan (Weekplan)</a>
+                        <a href="https://pele-easj.dk/2020e-tek/General-information.htm" class="links">Information</a>
+                        <a href="https://pele-easj.dk/2020e-tek/GuidelinesAndObjectives.htm" class="links">Purpose</a>
+                        <div class="links">
+                            Intranet
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Advanced_Programming.webp)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            4th Semester: Advanced C# programming
+                        </div>
+                        <a href="https://pele-easj.dk/2020e-AvanceretCsharp/SEMESTER.htm" class="links">Semester Plan (Weekplan)</a>
+                        <a href="https://pele-easj.dk/2020e-AvanceretCsharp/General-information.htm" class="links">Information</a>
+                        <a href="https://pele-easj.dk/2020e-AvanceretCsharp/GuidelinesAndObjectives.htm" class="links">Purpose</a>
+                        <div class="links">
+                            Intranet
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Archive.webp)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            Programming Links
+                        </div>
+                        <a href="https://msdn.microsoft.com/en-us/library/618ayhy6.aspx" class="links">Microsoft C# Reference</a>
+                        <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx" class="links">Microsoft C# Programming Guide</a>
+                        <a href="https://docs.oracle.com/javase/8/docs/api/" class="links">JAVA Documentation (version 8)</a>
+                        <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" class="links">Java Development Kit Downloads</a>
+                        
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Archive.webp)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            Study Links
+                        </div>
+                        <a href="https://helpdesk.easj.dk/" class="links">Counseling Mail Office365</a>
+                        <a href="https://moodle.zealand.dk/" class="links">Intranet / Moodle (incl schedule)</a>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item-wrapper">
+                    <div class="portfolio-img-background" style="background-image:url(Images/Responsive_Redesign/Archive.webp)">
+
+                    </div>
+
+                    <div class="img-text-wrapper">
+
+                        <div class="title">
+                            Archive
+                        </div>
+                        <a href="http://pele-easj.dk/archive.htm" class="links">Previous Courses</a>
+                        <a href="http://pele-easj.dk/downs/BigDataHFBro.pdf" class="links">HF Brobygning Slides</a>
+                        <a href="http://pele-easj.dk/downs/Opgaver-BigData.pdf" class="links">HF Brobygning Assignment</a>
+                        <a href="http://pele-easj.dk/downs/HF-Case-Opgave.pdf" class="links">HF Brobygning Case Assignment</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', () => {
+            portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+
+        portfolioItem.addEventListener('mouseout', () => {
+            portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>

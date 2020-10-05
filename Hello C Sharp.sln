@@ -24,13 +24,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portfolio", "Portfolio", "{
 		Styles.css = Styles.css
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSystem", "Fan_System1\FanSystem.csproj", "{0C61B9EF-81A2-44D2-ACD6-17BF016254FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanSystem", "Fan_System1\FanSystem.csproj", "{0C61B9EF-81A2-44D2-ACD6-17BF016254FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BF039A5F-61A7-48C4-B844-37059000695B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanOutputTest", "FanOutputTest\FanOutputTest.csproj", "{E8899CB1-72A2-4551-BA72-4630F35FF1A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanOutputTest", "FanOutputTest\FanOutputTest.csproj", "{E8899CB1-72A2-4551-BA72-4630F35FF1A7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0C61B9EF-81A2-44D2-ACD6-17BF016254FE} = {0C61B9EF-81A2-44D2-ACD6-17BF016254FE}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Responsive_Design", "Responsive_Design", "{C99A78F1-9E8A-41A6-B771-96C198A842C1}"
+	ProjectSection(SolutionItems) = preProject
+		Original_files\lvstyle.css = Original_files\lvstyle.css
+		New_Design.html = New_Design.html
+		Original.html = Original.html
+		StylesRD.css = StylesRD.css
 	EndProjectSection
 EndProject
 Global
