@@ -82,8 +82,7 @@ body {
     align-items: center;
     height: 100%;
     text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 100%;
 }
 
 .logo-wrapper img {
