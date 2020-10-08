@@ -11,28 +11,20 @@ function updateChoice() {
 }
 
 function stringManipulator(): void {
+    let submitInput: HTMLInputElement = <HTMLInputElement>document.getElementById("submitInput");
+    let submitted: string = submitInput.value;
+    let submitOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("submitOutput");
+
     if (choice == "Uppercase") {
-        let submitInput: HTMLInputElement = <HTMLInputElement>document.getElementById("submitInput");
-        let submitted: string = submitInput.value;
-        let submitOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("submitOutput");
         submitOutput.innerHTML = submitted.toUpperCase();
     }
     if (choice == "Lowercase") {
-        let submitInput: HTMLInputElement = <HTMLInputElement>document.getElementById("submitInput");
-        let submitted: string = submitInput.value;
-        let submitOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("submitOutput");
         submitOutput.innerHTML = submitted.toLowerCase();
     }
     if (choice == "Length") {
-        let submitInput: HTMLInputElement = <HTMLInputElement>document.getElementById("submitInput");
-        let submitted: string = submitInput.value;
-        let submitOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("submitOutput");
         submitOutput.innerHTML = submitted.length.toString();
     }
     if (choice == "Anarchy") {
-        let submitInput: HTMLInputElement = <HTMLInputElement>document.getElementById("submitInput");
-        let submitted: string = submitInput.value;
-        let submitOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("submitOutput");
         submitOutput.innerHTML = submitted.toUpperCase() + submitted.toLowerCase() + "afsdfqdasdadsvbejbjhcbnakbdsjkhabsdjkhbk" + submitted + " Hi my name is Jerry!";
     }
 }
