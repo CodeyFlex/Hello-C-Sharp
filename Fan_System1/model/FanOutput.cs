@@ -70,9 +70,9 @@ namespace model
                throw new System.ArgumentException("Humidity value is invalid (Is less than 30, or more than 80.");
             }
         }
-        public string fanData()
+        public string getFanData()
         {
-            return getId() + getName() + getTemp() + getHumidity();
+            return "Id: " + getId() + " Name: " + getName() + " Temp: " + getTemp() + " Humidity: " + getHumidity();
         }
     }
 }

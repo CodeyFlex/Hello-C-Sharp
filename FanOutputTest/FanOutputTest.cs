@@ -1,5 +1,5 @@
 using System;
-using FanSystem;
+using model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FanOutputTest
@@ -8,7 +8,7 @@ namespace FanOutputTest
     public class FanOutputTest
     {
         //Instance of FanSystem to be tested
-        FanOutput FanSys = new FanOutput();
+        FanOutput FanSys = new FanOutput(1, "Hej", 20, 40);
 
         [TestMethod]
         public void setIdTest()
@@ -57,6 +57,13 @@ namespace FanOutputTest
         public void setHumidityFailTest()
         {
             FanSys.setHumidity(89);
+        }
+
+        [TestMethod]
+        public void getFanDataTest()
+        {
+            FanSys.getFanData();
+            Assert.AreEqual(FanSys.getFanData(), "Id: " + 1 + " Name: " + "Hej" + " Temp: " + 20 + " Humidity: " + 40);
         }
     }
 }
