@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FanSystem
+namespace model
 {
     public class FanOutput
     {
@@ -8,6 +8,14 @@ namespace FanSystem
         private String name;
         private int temp;
         private int humidity;
+
+        public FanOutput(int id, string name, int temp, int humidity)
+        {
+            this.id = id;
+            this.name = name;
+            this.temp = temp;
+            this.humidity = humidity;
+        }
 
         public int getId()
         {
@@ -61,6 +69,10 @@ namespace FanSystem
             {
                throw new System.ArgumentException("Humidity value is invalid (Is less than 30, or more than 80.");
             }
+        }
+        public string fanData()
+        {
+            return getId() + getName() + getTemp() + getHumidity();
         }
     }
 }
