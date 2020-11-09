@@ -32,7 +32,7 @@ namespace RestAPI.Controllers
 
         // GET/Read api/<FanController>/5
         [HttpGet("{id}")]
-        public FanOutput Get(int id)
+        public FanOutput GetById(int id)
         {
             return FanData.Find(i => i.GetId() == id);
         }
@@ -48,7 +48,7 @@ namespace RestAPI.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] FanOutput value)
         {
-            FanOutput fanOutput = Get(id); 
+            FanOutput fanOutput = GetById(id); 
             if (fanOutput != null) {
                 fanOutput.SetId(value.GetId());
                 fanOutput.SetName(value.GetName());
@@ -61,7 +61,7 @@ namespace RestAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            FanOutput fanOutput = Get(id); 
+            FanOutput fanOutput = GetById(id); 
             FanData.Remove(fanOutput);
         }
     }
