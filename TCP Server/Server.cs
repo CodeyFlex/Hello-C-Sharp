@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using model;
+using ModelLib.model;
 
 namespace TCP_Server
 {
@@ -40,15 +40,16 @@ namespace TCP_Server
                     }
 
                     //string request = Encoding.UTF8.GetString(buffer, 0, recv);
+
                     string request = sr.ReadLine();
                     Console.WriteLine("request received: " + request);
                     
                     if (request == "HentAlle")
                     {
                         sw.WriteLine("Successfully executed HentAlle!");
-                        for (int i = 0; i < DataSet.fanData.Count; i++)
+                        for (int i = 0; i < DataSet.FanData.Count; i++)
                         {
-                            sw.WriteLine(DataSet.fanData[i].getFanData());
+                            sw.WriteLine(DataSet.FanData[i].GetFanData());
                             //Console.WriteLine(DataSet.getData());
                             sw.Flush();
                         }

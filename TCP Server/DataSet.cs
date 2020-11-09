@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using model;
+using ModelLib.model;
 
 namespace TCP_Server
 {
     class DataSet
     {
         //List of data
-        public static readonly List<FanOutput> fanData = new List<FanOutput>()
+        public static readonly List<FanOutput> FanData = new List<FanOutput>()
         {
             new FanOutput(1, "Fan Fanner", 20, 33),
             new FanOutput(2, "Fan Tastic", 24, 55),

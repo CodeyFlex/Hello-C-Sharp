@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using model;
+using ModelLib.model;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +14,7 @@ namespace RestAPI.Controllers
     public class FanController : ControllerBase
     {
         //List of data
-        private static readonly List<FanOutput> fanData = new List<FanOutput>()
+        private static readonly List<FanOutput> FanData = new List<FanOutput>()
         {
             new FanOutput(1, "Fan Fanner", 20, 33),
             new FanOutput(2, "Fan Tastic", 24, 55),
@@ -27,21 +27,21 @@ namespace RestAPI.Controllers
         [HttpGet]
         public IEnumerable<FanOutput> Get()
         {
-            return fanData;
+            return FanData;
         }
 
         // GET/Read api/<FanController>/5
         [HttpGet("{id}")]
         public FanOutput Get(int id)
         {
-            return fanData.Find(i => i.getId() == id);
+            return FanData.Find(i => i.GetId() == id);
         }
 
         // POST/Create api/<FanController>
         [HttpPost]
         public void Post([FromBody] FanOutput value)
         {
-            fanData.Add(value);
+            FanData.Add(value);
         }
 
         // PUT/Update api/<FanController>/5
@@ -50,10 +50,10 @@ namespace RestAPI.Controllers
         {
             FanOutput fanOutput = Get(id); 
             if (fanOutput != null) {
-                fanOutput.setId(value.getId());
-                fanOutput.setName(value.getName());
-                fanOutput.setTemp(value.getTemp());
-                fanOutput.setHumidity(value.getHumidity()); 
+                fanOutput.SetId(value.GetId());
+                fanOutput.SetName(value.GetName());
+                fanOutput.SetTemp(value.GetTemp());
+                fanOutput.SetHumidity(value.GetHumidity()); 
             }
         }
 
@@ -62,7 +62,7 @@ namespace RestAPI.Controllers
         public void Delete(int id)
         {
             FanOutput fanOutput = Get(id); 
-            fanData.Remove(fanOutput);
+            FanData.Remove(fanOutput);
         }
     }
 }
