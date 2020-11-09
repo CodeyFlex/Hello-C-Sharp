@@ -1,5 +1,5 @@
 using System;
-using model;
+using ModelLib.model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FanOutputTest
@@ -8,62 +8,62 @@ namespace FanOutputTest
     public class FanOutputTest
     {
         //Instance of FanSystem to be tested
-        FanOutput FanSys = new FanOutput(1, "Hej", 20, 40);
+        private readonly FanOutput _fanSys = new FanOutput(1, "Hej", 20, 40);
 
         [TestMethod]
-        public void setIdTest()
+        public void SetIdTest()
         {
-            FanSys.setId(15);
-            Assert.AreEqual(FanSys.getId(), 15);
+            _fanSys.SetId(15);
+            Assert.AreEqual(_fanSys.GetId(), 15);
         }
 
         [TestMethod]
-        public void setNameSuccessTest()
+        public void SetNameSuccessTest()
         {
-            FanSys.setName("Martin");
-            Assert.AreEqual(FanSys.getName(), "Martin");
+            _fanSys.SetName("Martin");
+            Assert.AreEqual(_fanSys.GetName(), "Martin");
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Name is too short.")]
-        public void setNameFailTest()
+        public void SetNameFailTest()
         {
-            FanSys.setName("M");
+            _fanSys.SetName("M");
         }
 
         [TestMethod]
-        public void setTempSuccessTest()
+        public void SetTempSuccessTest()
         {
-            FanSys.setTemp(23);
-            Assert.AreEqual(FanSys.getTemp(), 23);
+            _fanSys.SetTemp(23);
+            Assert.AreEqual(_fanSys.GetTemp(), 23);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Temp value is invalid (Is less than 15, or more than 25.")]
-        public void setTempFailTest()
+        public void SetTempFailTest()
         {
-            FanSys.setTemp(99);
+            _fanSys.SetTemp(99);
         }
 
         [TestMethod]
-        public void setHumiditySuccessTest()
+        public void SetHumiditySuccessTest()
         {
-            FanSys.setHumidity(43);
-            Assert.AreEqual(FanSys.getHumidity(), 43);
+            _fanSys.SetHumidity(43);
+            Assert.AreEqual(_fanSys.GetHumidity(), 43);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Humidity value is invalid (Is less than 30, or more than 80.")]
-        public void setHumidityFailTest()
+        public void SetHumidityFailTest()
         {
-            FanSys.setHumidity(89);
+            _fanSys.SetHumidity(89);
         }
 
         [TestMethod]
-        public void getFanDataTest()
+        public void GetFanDataTest()
         {
-            FanSys.getFanData();
-            Assert.AreEqual(FanSys.getFanData(), "Id: " + 1 + " Name: " + "Hej" + " Temp: " + 20 + " Humidity: " + 40);
+            _fanSys.GetFanData();
+            Assert.AreEqual(_fanSys.GetFanData(), "Id: " + 1 + " Name: " + "Hej" + " Temp: " + 20 + " Humidity: " + 40);
         }
     }
 }
