@@ -14,7 +14,7 @@ namespace RestAPI.Controllers
     public class FanController : ControllerBase
     {
         //List of data
-        private static readonly List<FanOutput> FanData = new List<FanOutput>()
+        public static List<FanOutput> FanData = new List<FanOutput>()
         {
             new FanOutput(1, "Fan Fanner", 20, 33),
             new FanOutput(2, "Fan Tastic", 24, 55),
@@ -34,7 +34,7 @@ namespace RestAPI.Controllers
         [HttpGet("{id}")]
         public FanOutput GetById(int id)
         {
-            return FanData.Find(i => i.GetId() == id);
+            return FanData.Find(i => i.Id == id);
         }
 
         // POST/Create api/<FanController>
@@ -50,10 +50,10 @@ namespace RestAPI.Controllers
         {
             FanOutput fanOutput = GetById(id); 
             if (fanOutput != null) {
-                fanOutput.SetId(value.GetId());
-                fanOutput.SetName(value.GetName());
-                fanOutput.SetTemp(value.GetTemp());
-                fanOutput.SetHumidity(value.GetHumidity()); 
+                fanOutput.Id = value.Id;
+                fanOutput.Name = value.Name;
+                fanOutput.Temp = value.Temp;
+                fanOutput.Humidity = value.Humidity; 
             }
         }
 

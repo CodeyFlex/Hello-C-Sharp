@@ -13,57 +13,57 @@ namespace FanOutputTest
         [TestMethod]
         public void SetIdTest()
         {
-            _fanSys.SetId(15);
-            Assert.AreEqual(_fanSys.GetId(), 15);
+            _fanSys.Id = 15;
+            Assert.AreEqual(_fanSys.Id, 15);
         }
 
         [TestMethod]
         public void SetNameSuccessTest()
         {
-            _fanSys.SetName("Martin");
-            Assert.AreEqual(_fanSys.GetName(), "Martin");
+            _fanSys.Name = "Martin";
+            Assert.AreEqual(_fanSys.Name, "Martin");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Name is too short.")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException), "Name is too short.")]
         public void SetNameFailTest()
         {
-            _fanSys.SetName("M");
+            _fanSys.Name = "M";
         }
 
         [TestMethod]
         public void SetTempSuccessTest()
         {
-            _fanSys.SetTemp(23);
-            Assert.AreEqual(_fanSys.GetTemp(), 23);
+            _fanSys.Temp = 23;
+            Assert.AreEqual(_fanSys.Temp, 23);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Temp value is invalid (Is less than 15, or more than 25.")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException), "Temp value is invalid (Is less than 15, or more than 25.")]
         public void SetTempFailTest()
         {
-            _fanSys.SetTemp(99);
+            _fanSys.Temp = 99;
         }
 
         [TestMethod]
         public void SetHumiditySuccessTest()
         {
-            _fanSys.SetHumidity(43);
-            Assert.AreEqual(_fanSys.GetHumidity(), 43);
+            _fanSys.Humidity = 43;
+            Assert.AreEqual(_fanSys.Humidity, 43);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Humidity value is invalid (Is less than 30, or more than 80.")]
+        [ExpectedException(typeof(ArgumentOutOfRangeException), "Humidity value is invalid (Is less than 30, or more than 80.")]
         public void SetHumidityFailTest()
         {
-            _fanSys.SetHumidity(89);
+            _fanSys.Humidity = 89;
         }
 
         [TestMethod]
-        public void GetFanDataTest()
+        public void ToStringTest()
         {
-            _fanSys.GetFanData();
-            Assert.AreEqual(_fanSys.GetFanData(), "Id: " + 1 + " Name: " + "Hej" + " Temp: " + 20 + " Humidity: " + 40);
+            _fanSys.ToString();
+            Assert.AreEqual(_fanSys.ToString(), "Id: 1, Name: Hej, Temp: 20, Humidity: 40");
         }
     }
 }

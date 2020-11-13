@@ -19,8 +19,23 @@ namespace RestAPITests.Controllers
         [TestMethod()]
         public void GetByIdTest()
         {
-            Assert.AreEqual(_fanController.GetById(3).GetId(), 3);
-            Assert.AreEqual(_fanController.GetById(3).GetName(), "Fan Nominal");
+            Assert.AreEqual(_fanController.GetById(3).Id, 3);
+            Assert.AreEqual(_fanController.GetById(3).Name, "Fan Nominal");
+        }
+
+        [TestMethod()]
+        public void PostTest()
+        {
+        }
+
+        [TestMethod()]
+        public void PutTest()
+        {
+        }
+
+        [TestMethod()]
+        public void DeleteTest()
+        {
         }
     }
 }
