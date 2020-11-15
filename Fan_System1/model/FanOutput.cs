@@ -4,28 +4,23 @@ namespace ModelLib.model
 {
     public class FanOutput
     {
-        private int _id;
         private string _name;
         private int _temp;
         private int _humidity;
 
         public FanOutput(int id, string name, int temp, int humidity)
         {
-            _id = id;
+            Id = id;
             _name = name;
             _temp = temp;
             _humidity = humidity;
         }
 
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
+        public int Id { get; set; }
 
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -42,7 +37,7 @@ namespace ModelLib.model
 
         public int Temp
         {
-            get { return _temp; }
+            get => _temp;
             set
             {
                 if (value < 15 || value > 25)
@@ -57,7 +52,7 @@ namespace ModelLib.model
         }
         public int Humidity
         {
-            get { return _humidity; }
+            get => _humidity;
             set {
                 if (value < 30 || value > 80)
                 {
@@ -73,6 +68,11 @@ namespace ModelLib.model
         public override string ToString()
         {
             return $"Id: {Id}, Name: {Name}, Temp: {Temp}, Humidity: {Humidity}";
+        }
+
+        static void Data()
+        {
+
         }
     }
 }

@@ -14,13 +14,13 @@ namespace RestAPI.Controllers
     public class FanController : ControllerBase
     {
         //List of data
-        public static List<FanOutput> FanData = new List<FanOutput>()
+        private static List<FanOutput> FanData = new List<FanOutput>()
         {
-            new FanOutput(1, "Fan Fanner", 20, 33),
-            new FanOutput(2, "Fan Tastic", 24, 55),
-            new FanOutput(3, "Fan Nominal", 22, 44),
-            new FanOutput(4, "Fan T You", 17, 45),
-            new FanOutput(5, "Fan 3000", 19, 59)
+            new FanOutput(0, "Fan Fanner", 20, 33),
+            new FanOutput(1, "Fan Tastic", 24, 55),
+            new FanOutput(2, "Fan Nominal", 22, 44),
+            new FanOutput(3, "Fan T You", 17, 45),
+            new FanOutput(4, "Fan 3000", 19, 59)
         };
 
         // GET/Read: api/<FanController>
