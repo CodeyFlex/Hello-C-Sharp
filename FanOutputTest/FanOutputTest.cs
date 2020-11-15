@@ -7,7 +7,7 @@ namespace FanOutputTest
     [TestClass]
     public class FanOutputTest
     {
-        //Instance of FanSystem to be tested
+        //Instance of FanOutput Model to be tested
         private readonly FanOutput _fanOutputModel = new FanOutput(5, "Fan Test", 20, 40);
 
         [TestMethod]

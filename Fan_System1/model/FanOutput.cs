@@ -10,7 +10,7 @@ namespace ModelLib.model
 
         public FanOutput(int id, string name, int temp, int humidity)
         {
-            Id = id;
+            _id = id;
             _name = name;
             _temp = temp;
             _humidity = humidity;
