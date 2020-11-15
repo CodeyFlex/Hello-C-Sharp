@@ -49,7 +49,7 @@ namespace TCP_Server
                         sw.WriteLine("Successfully executed HentAlle!");
                         for (int i = 0; i < DataSet.FanData.Count; i++)
                         {
-                            sw.WriteLine(DataSet.FanData[i].GetFanData());
+                            sw.WriteLine(DataSet.FanData[i].ToString());
                             //Console.WriteLine(DataSet.getData());
                             sw.Flush();
                         }
