@@ -4,6 +4,7 @@ namespace ModelLib.model
 {
     public class FanOutput
     {
+        private int _id;
         private string _name;
         private int _temp;
         private int _humidity;
@@ -14,6 +15,11 @@ namespace ModelLib.model
             _name = name;
             _temp = temp;
             _humidity = humidity;
+        }
+
+        public FanOutput()
+        {
+
         }
 
         public int Id { get; set; }
