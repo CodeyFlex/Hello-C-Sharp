@@ -36,6 +36,13 @@ namespace RestAPI.Controllers
             return FanData.Find(i => i.Id == id);
         }
 
+        // GET/Read api/<FanController>/Name/Tastic
+        [HttpGet("Name/{name}")]
+        public FanOutput GetByName(string name)
+        {
+            return FanData.Find(i => i.Name.Contains(name));
+        }
+
         // POST/Create api/<FanController>
         [HttpPost]
         public void Post([FromBody] FanOutput value)
