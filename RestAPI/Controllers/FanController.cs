@@ -43,15 +43,15 @@ namespace RestAPI.Controllers
             return FanData.FindAll(i => i.Name.Contains(name));
         }
 
-        // GET/Read api/<FanController>/Name/Tastic
+        // GET/Read api/<FanController>/Temp/24
         [HttpGet("Temp/{temp}")]
         public IEnumerable<FanOutput> GetByTemp(int temp)
         {
             return FanData.FindAll(i => i.Temp.Equals(temp));
         }
 
-        // GET/Read api/<FanController>/Name/Tastic
-        [HttpGet("Temp/{temp}")]
+        // GET/Read api/<FanController>/Humidity/59
+        [HttpGet("Humidity/{humidity}")]
         public IEnumerable<FanOutput> GetByHumidity(int humidity)
         {
             return FanData.FindAll(i => i.Humidity.Equals(humidity));
