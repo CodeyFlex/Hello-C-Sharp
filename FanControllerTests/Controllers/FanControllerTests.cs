@@ -34,7 +34,7 @@ namespace RestAPITests.Controllers
         [TestMethod()]
         public void GetByNameTest()
         {
-            Assert.AreEqual(_fanController.GetByName("Fanner").ToString(), new string("Id: 0, Name: Fan Fanner, Temp: 20, Humidity: 33"));
+            Assert.AreEqual(_fanController.GetByName("Fan").Count(), (5));
         }
 
         public override bool Equals(object obj)
