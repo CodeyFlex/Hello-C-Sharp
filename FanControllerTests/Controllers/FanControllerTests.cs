@@ -37,6 +37,18 @@ namespace RestAPITests.Controllers
             Assert.AreEqual(_fanController.GetByName("Fan").Count(), (5));
         }
 
+        [TestMethod()]
+        public void GetByTempTest()
+        {
+            Assert.AreEqual(_fanController.GetByTemp(24).Count(), (1));
+        }
+
+        [TestMethod()]
+        public void GetByHumidityTest()
+        {
+            Assert.AreEqual(_fanController.GetByHumidity(59).Count(), (1));
+        }
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
