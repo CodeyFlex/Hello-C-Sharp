@@ -18,71 +18,92 @@ namespace RestAPITests.Controllers
         //Instance of FanOutput Model to be tested
         private readonly FanOutput _fanOutputModel = new FanOutput(5, "Fan Test", 20, 40);
 
+        //Instance of FilterFan Model to be tested
+        private readonly FilterFan _filterFan = new FilterFan(20, 22);
+
         [TestMethod()]
         public void GetTest()
         {
-            Assert.AreEqual(_fanController.Get().Count(), 5);
+            Assert.AreEqual(5, _fanController.Get().Count());
         }
 
         [TestMethod()]
         public void GetByIdTest()
         {
-            Assert.AreEqual(_fanController.GetById(2).Id, 2);
-            Assert.AreEqual(_fanController.GetById(2).Name, "Fan Nominal");
+            Assert.AreEqual(2, _fanController.GetById(2).Id);
+            Assert.AreEqual("Fan Nominal", _fanController.GetById(2).Name);
         }
 
         [TestMethod()]
         public void GetByNameTest()
         {
-            Assert.AreEqual(_fanController.GetByName("Fan").Count(), (5));
+            Assert.AreEqual((5), _fanController.GetByName("Fan").Count());
         }
 
         [TestMethod()]
         public void GetByTempTest()
         {
-            Assert.AreEqual(_fanController.GetByTemp(24).Count(), (1));
+            Assert.AreEqual((1), _fanController.GetByTemp(24).Count());
         }
 
         [TestMethod()]
         public void GetByHumidityTest()
         {
-            Assert.AreEqual(_fanController.GetByHumidity(59).Count(), (1));
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((FanControllerTests) obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(_fanController, _fanOutputModel);
+            Assert.AreEqual((1), _fanController.GetByHumidity(59).Count());
         }
 
         [TestMethod()]
         public void PostTest()
         {
             _fanController.Post(_fanOutputModel);
-            Assert.AreEqual(_fanController.GetById(_fanOutputModel.Id).Name, "Fan Test");
+            Assert.AreEqual("Fan Test", _fanController.GetById(_fanOutputModel.Id).Name);
         }
 
         [TestMethod()]
         public void PutTest()
         {
             _fanController.Put(4, new FanOutput(4, "Fan Put Test", 20, 40));
-            Assert.AreEqual(_fanController.GetById(4).Name, "Fan Put Test");
+            Assert.AreEqual("Fan Put Test", _fanController.GetById(4).Name);
         }
 
         [TestMethod()]
         [ExpectedException(typeof(System.NullReferenceException), "Model was succesfully deleted, and then not found")]
         public void DeleteTest()
         {
-            Assert.AreEqual(_fanController.GetById(_fanOutputModel.Id).Name, "Fan Test");
+            Assert.AreEqual("Fan Test", _fanController.GetById(_fanOutputModel.Id).Name);
             _fanController.Delete(_fanOutputModel.Id);
-            Assert.AreEqual(_fanController.GetById(_fanOutputModel.Id).Name, "Fan Test");
+            Assert.AreEqual("Fan Test", _fanController.GetById(_fanOutputModel.Id).Name);
+        }
+
+        [TestMethod()]
+        
+        public void SearchTempBelowTest()
+        {
+            Assert.AreEqual(4, _fanController.SearchTempBelow(21).Count());
+        }
+
+        [TestMethod()]
+        public void SearchTempAboveTest()
+        {
+            Assert.AreEqual(2, _fanController.SearchTempAbove(21).Count());
+        }
+
+        [TestMethod()]
+        public void SearchHumidityBelowTest()
+        {
+            Assert.AreEqual(5, _fanController.SearchHumidityBelow(48).Count());
+        }
+
+        [TestMethod()]
+        public void SearchHumidityAboveTest()
+        {
+            Assert.AreEqual(1, _fanController.SearchHumidityAbove(50).Count());
+        }
+
+        [TestMethod()]
+        public void SearchTest()
+        {
+            Assert.AreEqual(_fanController.GetById(3), _fanController.Search(_filterFan));
         }
     }
 }
