@@ -84,5 +84,46 @@ namespace RestAPI.Controllers
             FanOutput fanOutput = GetById(id); 
             FanData.Remove(fanOutput);
         }
+
+        // Search api/fan/search/TempBelow?number=20
+        [HttpGet]
+        [Route("Search/TempBelow")]
+        public IEnumerable<FanOutput> SearchTempBelow([FromQuery] double number)
+        {
+            return FanData.FindAll(i => i.Temp < number);
+        }
+
+        // Search api/fan/search/TempAbove?number=20
+        [HttpGet]
+        [Route("Search/TempAbove")]
+        public IEnumerable<FanOutput> SearchTempAbove([FromQuery] double number)
+        {
+            return FanData.FindAll(i => i.Temp > number);
+        }
+
+        // Search api/fan/search/HumidityBelow?number=50
+        [HttpGet]
+        [Route("Search/HumidityBelow")]
+        public IEnumerable<FanOutput> SearchHumidityBelow([FromQuery] double number)
+        {
+            return FanData.FindAll(i => i.Humidity < number);
+        }
+
+        // Search api/fan/search/HumidityAbove?number=50
+        [HttpGet]
+        [Route("Search/HumidityAbove")]
+        public IEnumerable<FanOutput> SearchHumidityAbove([FromQuery] double number)
+        {
+            return FanData.FindAll(i => i.Humidity > number);
+        }
+
+        // Search with object parameter
+        // Search api/fan/search?LowTemp=20
+        [HttpGet]
+        [Route("Search/")]
+        public FanOutput Search([FromQuery] FilterFan filter)
+        {
+            return FanData.Find(i => i.Temp < filter.LowTemp);
+        }
     }
 }
