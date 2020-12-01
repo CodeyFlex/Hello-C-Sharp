@@ -8,20 +8,20 @@ namespace FanOutputTest
     public class FanOutputTest
     {
         //Instance of FanOutput Model to be tested
-        private readonly FanOutput _fanOutputModel = new FanOutput(5, "Fan Test", 20, 40);
+        private readonly FanOutput _fanOutputModel = new FanOutput();
 
         [TestMethod]
         public void SetIdTest()
         {
             _fanOutputModel.Id = 15;
-            Assert.AreEqual(_fanOutputModel.Id, 15);
+            Assert.AreEqual(15, _fanOutputModel.Id);
         }
 
         [TestMethod]
         public void SetNameSuccessTest()
         {
             _fanOutputModel.Name = "Martin";
-            Assert.AreEqual(_fanOutputModel.Name, "Martin");
+            Assert.AreEqual("Martin", _fanOutputModel.Name);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace FanOutputTest
         public void SetTempSuccessTest()
         {
             _fanOutputModel.Temp = 23;
-            Assert.AreEqual(_fanOutputModel.Temp, 23);
+            Assert.AreEqual(23, _fanOutputModel.Temp);
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace FanOutputTest
         public void SetHumiditySuccessTest()
         {
             _fanOutputModel.Humidity = 43;
-            Assert.AreEqual(_fanOutputModel.Humidity, 43);
+            Assert.AreEqual(43, _fanOutputModel.Humidity);
         }
 
         [TestMethod]
@@ -62,8 +62,9 @@ namespace FanOutputTest
         [TestMethod]
         public void ToStringTest()
         {
+            _fanOutputModel.Name = "Fan To String Test";
             _fanOutputModel.ToString();
-            Assert.AreEqual(_fanOutputModel.ToString(), "Id: 5, Name: Fan Test, Temp: 20, Humidity: 40");
+            Assert.AreEqual("Id: 0, Name: Fan To String Test, Temp: 0, Humidity: 0", _fanOutputModel.ToString());
         }
     }
 }
